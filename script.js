@@ -6,7 +6,7 @@ The html file will accept a temperature input and a select dropdown to choose th
 
 The result of the conversion will be displayed on the page.
 
-if the temperature is above 100 degrees Fahrenheit, the result will be displayed in red text to indicate that it is a high temperature.
+if the temperature is above 85 degrees Fahrenheit, the result will be displayed in red text to indicate that it is a high temperature.
 
 if the temperature is below 0 degrees Celsius, the result will be displayed in blue text to indicate that it is a low temperature.
 
@@ -88,6 +88,7 @@ function validateTemperature(temperature) {
 function convertTemperature(temperature, fromUnit, toUnit) {
   // Test to see if the function is being called
   console.log('convertTemperature function called');
+  // Test to see if the function is being called
   return converter.convert(temperature, fromUnit, toUnit);
 }
 
@@ -95,11 +96,12 @@ function convertTemperature(temperature, fromUnit, toUnit) {
 function displayResult(result, temperature, toUnit) {
   const resultElement = document.getElementById("result");
   resultElement.textContent = result;
+  console.log(result, temperature, toUnit);
 
   // Clear any previous color
   resultElement.style.color = "gray";
 
-  if (toUnit === "Fahrenheit" && temperature > 100) {
+  if (toUnit === "Fahrenheit" && temperature > 85) {
       resultElement.style.color = "red";
   } else if (toUnit === "Celsius" && temperature < 0) {
       resultElement.style.color = "blue";
@@ -113,6 +115,9 @@ function displayResult(result, temperature, toUnit) {
 // Step 5: Add event listener to the button to perform the conversion.
 const convertButton = document.getElementById("btn");
 convertButton.addEventListener("click", function () {
+  // Test to see if the function is being called
+  console.log('Button clicked');
+  // Test to see if the function is being called
   const temperatureInput = document.getElementById("temperature").value;
   const fromUnit = document.getElementById("fromUnit").value;
   const toUnit = document.getElementById("toUnit").value;

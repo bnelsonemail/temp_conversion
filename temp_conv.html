@@ -17,27 +17,28 @@
             <form>
                 <div class="temp-input">
                     <label class="temp-input" for="temp">Temperature:</label>
-                    <input class="temp-input" type="number" id="temp" name="temp" placeholder="50" required>
+                    <input class="temp-input" type="number" id="temperature" name="temperature" placeholder="50" required>
                 </div>
                 <div class="temp-units">
                     <label class="temp-units" for="fromUnit">Unit:</label>
                     <select id="fromUnit" name="unit">
-                        <option class="temp-units" value="celsius">Celsius</option>
-                        <option class="temp-units" value="fahrenheit">Fahrenheit</option>
-                        <option class="temp-units" value="kelvin">Kelvin</option>
+                        <option class="temp-units" value="Celsius">Celsius</option>
+                        <option class="temp-units" value="Fahrenheit">Fahrenheit</option>
+                        <option class="temp-units" value="Kelvin">Kelvin</option>
                     </select>
                 </div>
                 <div class="temp-convert">
                     <label class="temp-convert" for="toUnit">Convert to:</label>
                     <select id="toUnit" name="toUnit">
-                        <option class="temp-convert" value="celsius">Celsius</option>
-                        <option class="temp-convert" value="fahrenheit">Fahrenheit</option>
-                        <option class="temp-convert" value="kelvin">Kelvin</option>
+                        <option class="temp-convert" value="Celsius">Celsius</option>
+                        <option class="temp-convert" value="Fahrenheit">Fahrenheit</option>
+                        <option class="temp-convert" value="Kelvin">Kelvin</option>
                     </select>
                 </div>
                     <button id="btn" type="submit">Convert</button>
             </form>
         </div>
+        <div id="result"></div>
     </main>
     <footer>
         <p>2024 Temperature Conversion Application Website</p>
