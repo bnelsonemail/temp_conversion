@@ -108,17 +108,17 @@ class TemperatureConverter {
       if (fromUnit === toUnit) {
           return temperature + " " + toUnit;
       } else if (fromUnit === "Celsius" && toUnit === "Fahrenheit") {
-          return (temperature * 9/5) + 32 + " Fahrenheit";
+          return (Math.round(((temperature * 9/5) + 32) * 10) / 10) + " Fahrenheit";
       } else if (fromUnit === "Celsius" && toUnit === "Kelvin") {
-          return temperature + 273.15 + " Kelvin";
+          return (Math.round((temperature + 273.15) * 10) / 10) + " Kelvin";
       } else if (fromUnit === "Fahrenheit" && toUnit === "Celsius") {
-          return (temperature - 32) * 5/9 + " Celsius";
+          return (Math.round(((temperature - 32) * 5/9) * 10) / 10) + " Celsius";
       } else if (fromUnit === "Fahrenheit" && toUnit === "Kelvin") {
-          return (temperature - 32) * 5/9 + 273.15 + " Kelvin";
+          return (Math.round(((temperature - 32) * 5/9 + 273.15) * 10) / 10) + " Kelvin";
       } else if (fromUnit === "Kelvin" && toUnit === "Celsius") {
-          return temperature - 273.15 + " Celsius";
+          return (Math.round((temperature - 273.15) * 10) / 10) + " Celsius";
       } else if (fromUnit === "Kelvin" && toUnit === "Fahrenheit") {
-          return (temperature - 273.15) * 9/5 + 32 + " Fahrenheit";
+          return (Math.round(((temperature - 273.15) * 9/5 + 32) * 10) / 10) + " Fahrenheit";
       } else {
           return "Invalid conversion";
       }
@@ -249,16 +249,16 @@ function displayResult(result, temperature, toUnit) {
   console.log(result, temperature, toUnit);
 
   // Clear any previous color
-  resultElement.style.color = "gray";
+  resultElement.style.backgroundColor = "gray";
 
   if (toUnit === "Fahrenheit" && temperature > 85) {
-      resultElement.style.color = "red";
+      resultElement.style.backgroundColor = "red";
   } else if (toUnit === "Celsius" && temperature < 0) {
-      resultElement.style.color = "blue";
+      resultElement.style.backgroundColor = "blue";
   } else if (toUnit === "Fahrenheit" && temperature < 0) {
-      resultElement.style.color = "purple";
+      resultElement.style.backgroundColor = "purple";
   } else if (toUnit === "Celsius" && temperature > 100) {
-      resultElement.style.color = "orange";
+      resultElement.style.backgroundColor = "orange";
   }
 }
 
