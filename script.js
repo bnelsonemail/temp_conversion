@@ -114,7 +114,8 @@ function displayResult(result, temperature, toUnit) {
 
 // Step 5: Add event listener to the button to perform the conversion.
 const convertButton = document.getElementById("btn");
-convertButton.addEventListener("click", function () {
+convertButton.addEventListener("click", function (e) {
+  e.preventDefault();
   // Test to see if the function is being called
   console.log('Button clicked');
   // Test to see if the function is being called
