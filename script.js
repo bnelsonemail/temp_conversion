@@ -86,29 +86,32 @@ function validateTemperature(temperature) {
 
 // Step 3: Create a function to convert the temperature.
 function convertTemperature(temperature, fromUnit, toUnit) {
+  // Test to see if the function is being called
+  console.log('convertTemperature function called');
   return converter.convert(temperature, fromUnit, toUnit);
 }
 
 // Step 4: Create a function to display the result of the conversion.
-function displayResult(result, temperature) {
+function displayResult(result, temperature, toUnit) {
   const resultElement = document.getElementById("result");
   resultElement.textContent = result;
 
-  if (temperature > 100) {
+  // Clear any previous color
+  resultElement.style.color = "gray";
+
+  if (toUnit === "Fahrenheit" && temperature > 100) {
       resultElement.style.color = "red";
-  } else if (temperature < 0) {
-      if (result.includes("Fahrenheit")) {
-          resultElement.style.color = "purple";
-      } else {
-          resultElement.style.color = "blue";
-      }
-  } else {
-      resultElement.style.color = "gray";
+  } else if (toUnit === "Celsius" && temperature < 0) {
+      resultElement.style.color = "blue";
+  } else if (toUnit === "Fahrenheit" && temperature < 0) {
+      resultElement.style.color = "purple";
+  } else if (toUnit === "Celsius" && temperature > 100) {
+      resultElement.style.color = "orange";
   }
 }
 
 // Step 5: Add event listener to the button to perform the conversion.
-const convertButton = document.getElementById("convert");
+const convertButton = document.getElementById("btn");
 convertButton.addEventListener("click", function () {
   const temperatureInput = document.getElementById("temperature").value;
   const fromUnit = document.getElementById("fromUnit").value;
@@ -117,16 +120,11 @@ convertButton.addEventListener("click", function () {
   if (validateTemperature(temperatureInput) === true) {
       const temperature = parseFloat(temperatureInput);
       const result = convertTemperature(temperature, fromUnit, toUnit);
-      displayResult(result, temperature);
+      displayResult(result, temperature, toUnit);
   } else {
       const resultElement = document.getElementById("result");
       resultElement.textContent = validateTemperature(temperatureInput);
       resultElement.style.color = "red";
   }
 });
-
-
-// Step 8: Test the script by entering different temperatures and units.
-
-// Step 9: Refactor the code if necessary.
 
