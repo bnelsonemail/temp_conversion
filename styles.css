@@ -45,6 +45,34 @@ form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.temp-input {
+    margin-bottom: 5px;
+    
+}
+
+.temp-units {
+    margin-bottom: 5px;
+}
+
+#btn {
+    background-color: #810909;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    border-radius: 10px;
+}
+
+#btn:hover {
+    background-color: #1f0dc2;
+    transition: 1s;
+    cursor: pointer;
+}
+
+
+
 /*
 .temp-form {
     position: relative;
