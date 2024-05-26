@@ -109,29 +109,29 @@ function displayResult(result, temperature, toUnit) {
   // Clear any previous color
   resultElement.style.backgroundColor = "gray";
 
-  if (toUnit === "Fahrenheit" && temperature > 85) {
+  if (toUnit === "Fahrenheit" && parseFloat(result) >= 85) {
       resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Celsius" && temperature < 1) {
+  } else if (toUnit === "Celsius" && parseFloat(result) <= 0) {
       resultElement.style.backgroundColor = "blue";
-  } else if (toUnit === "Fahrenheit" && temperature < 0) {
+  } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 0) {
       resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Celsius" && temperature > 100) {
+  } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
       resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Fahrenheit" && temperature > 100) {
+  } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 100) {
       resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Kelvin" && temperature > 373.15) {
+  } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.15) {
       resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Kelvin" && temperature < 255.4) {
+  } else if (toUnit === "Kelvin" && parseFloat(result) <= 255.4) {
       resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Kelvin" && temperature < 0) {
+  } else if (toUnit === "Kelvin" && parseFloat(result) <= 0) {
       resultElement.style.backgroundColor = "blue";
-  } else if (toUnit === "Celsius" && temperature < -17.8) {
+  } else if (toUnit === "Celsius" && parseFloat(result) <= -17.8) {
       resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Celsius" && temperature > 29.4) {
+  } else if (toUnit === "Celsius" && parseFloat(result) >= 29.4) {
       resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Kelvin" && temperature > 302.6) {
+  } else if (toUnit === "Kelvin" && parseFloat(result) >= 302.6) {
       resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Fahrenheit" && temperature < 32) {
+  } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 32) {
       resultElement.style.backgroundColor = "blue";
   }
   
