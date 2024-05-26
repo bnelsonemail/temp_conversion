@@ -108,7 +108,7 @@ form {
     color: white;
 }
 
-#resultText {
+.resultText {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,22 +119,45 @@ form {
 }
 
 .color-legend {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+    display: inline-flexbox;
+    justify-content:flex-start;
+    align-items: flex-start;
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: .7rem;
     font-weight: 900;
     color: white;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 10px;
+    width:fit-content;
 }
 
 .color-legend h3 {
     text-decoration: underline;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .letters {
     transition: color 1000ms;
+}
+
+.head-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.main-text {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    width: auto;
 }
 /*
 .temp-form {
