@@ -49,12 +49,8 @@ class TemperatureConverter {
   }
 
 
-
   convert(temperature, fromUnit, toUnit) {
-      // Test to see if the function is being called
-      console.log('I\'m here');
-
-      if (fromUnit === toUnit) {
+    if (fromUnit === toUnit) {
           return temperature + " " + toUnit;
       } else if (fromUnit === "Celsius" && toUnit === "Fahrenheit") {
           return (Math.round(((temperature * 9/5) + 32) * 10) / 10) + " Fahrenheit";
@@ -88,9 +84,6 @@ function validateTemperature(temperature) {
 
 // Step 3: Create a function to convert the temperature.
 function convertTemperature(temperature, fromUnit, toUnit) {
-  // Test to see if the function is being called
-  console.log('convertTemperature function called');
-  // Test to see if the function is being called
   return converter.convert(temperature, fromUnit, toUnit);
 }
 
@@ -109,41 +102,38 @@ function displayResult(result, temperature, toUnit) {
   // Clear any previous color
   resultElement.style.backgroundColor = "gray";
 
-  if (toUnit === "Fahrenheit" && parseFloat(result) >= 85) {
-      resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Celsius" && parseFloat(result) <= 0) {
-      resultElement.style.backgroundColor = "blue";
-  } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 0) {
-      resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
-      resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 100) {
-      resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.15) {
-      resultElement.style.backgroundColor = "orange";
-  } else if (toUnit === "Kelvin" && parseFloat(result) <= 255.4) {
-      resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Kelvin" && parseFloat(result) <= 0) {
-      resultElement.style.backgroundColor = "blue";
-  } else if (toUnit === "Celsius" && parseFloat(result) <= -17.8) {
-      resultElement.style.backgroundColor = "purple";
-  } else if (toUnit === "Celsius" && parseFloat(result) >= 29.4) {
-      resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Kelvin" && parseFloat(result) >= 302.6) {
-      resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 32) {
-      resultElement.style.backgroundColor = "blue";
-  }
   
+  if (toUnit === "Fahrenheit" && parseFloat(result) <= 0) {
+      resultElement.style.backgroundColor = "purple";
+    } else if (toUnit === "Kelvin" && parseFloat(result) <= 255.4) {
+        resultElement.style.backgroundColor = "purple";
+    } else if (toUnit === "Celsius" && parseFloat(result) <= -17.8) {
+        resultElement.style.backgroundColor = "purple";
+    } else if (toUnit === "Celsius" && parseFloat(result) <= 0) {
+        resultElement.style.backgroundColor = "blue";
+    } else if (toUnit === "Kelvin" && parseFloat(result) <= 0) {
+        resultElement.style.backgroundColor = "blue";
+    } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 32) {
+        resultElement.style.backgroundColor = "blue";
+    } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.15) {
+        resultElement.style.backgroundColor = "orange";
+    } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
+        resultElement.style.backgroundColor = "orange";
+    } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 100) {
+        resultElement.style.backgroundColor = "orange";
+    } else if (toUnit === "Celsius" && parseFloat(result) >= 29.4) {
+        resultElement.style.backgroundColor = "red";
+    } else if (toUnit === "Kelvin" && parseFloat(result) >= 302.6) {
+        resultElement.style.backgroundColor = "red"; 
+    } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 85) {
+        resultElement.style.backgroundColor = "red";
+    }
 }
 
 // Step 5: Add event listener to the button to perform the conversion.
 const convertButton = document.getElementById("btn");
 convertButton.addEventListener("click", function (e) {
   e.preventDefault();
-  // Test to see if the function is being called
-  console.log('Button clicked');
-  // Test to see if the function is being called
   const temperatureInput = document.getElementById("temperature").value;
   const fromUnit = document.getElementById("fromUnit").value;
   const toUnit = document.getElementById("toUnit").value;
