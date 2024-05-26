@@ -90,6 +90,7 @@ function convertTemperature(temperature, fromUnit, toUnit) {
 // Step 4: Create a function to display the result of the conversion.
 function displayResult(result, temperature, toUnit) {
   const resultElement = document.getElementById("result");
+  const background = document.getElementsByTagName("body")[0];
   resultElement.textContent = result;
   console.log(result, temperature, toUnit);
 
@@ -100,33 +101,33 @@ function displayResult(result, temperature, toUnit) {
   */
 
   // Clear any previous color
-  resultElement.style.backgroundColor = "gray";
+  background.style.backgroundColor = "gray";
 
   
   if (toUnit === "Fahrenheit" && parseFloat(result) <= 0) {
-      resultElement.style.backgroundColor = "purple";
+    background.style.backgroundColor = "purple";
     } else if (toUnit === "Kelvin" && parseFloat(result) <= 255.4) {
-        resultElement.style.backgroundColor = "purple";
+        background.style.backgroundColor = "purple";
     } else if (toUnit === "Celsius" && parseFloat(result) <= -17.8) {
-        resultElement.style.backgroundColor = "purple";
+        background.style.backgroundColor = "purple";
     } else if (toUnit === "Celsius" && parseFloat(result) <= 0) {
-        resultElement.style.backgroundColor = "blue";
+        background.style.backgroundColor = "blue";
     } else if (toUnit === "Kelvin" && parseFloat(result) <= 0) {
-        resultElement.style.backgroundColor = "blue";
+        background.style.backgroundColor = "blue";
     } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 32) {
-        resultElement.style.backgroundColor = "blue";
+        background.style.backgroundColor = "blue";
     } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.15) {
-        resultElement.style.backgroundColor = "orange";
+        background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
-        resultElement.style.backgroundColor = "orange";
+        background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 100) {
-        resultElement.style.backgroundColor = "orange";
+        background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Celsius" && parseFloat(result) >= 29.4) {
-        resultElement.style.backgroundColor = "red";
+        background.style.backgroundColor = "#85120a";
     } else if (toUnit === "Kelvin" && parseFloat(result) >= 302.6) {
-        resultElement.style.backgroundColor = "red"; 
+        background.style.backgroundColor = "#85120a"; 
     } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 85) {
-        resultElement.style.backgroundColor = "red";
+        background.style.backgroundColor = "#85120a";
     }
 }
 
