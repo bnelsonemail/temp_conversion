@@ -120,7 +120,7 @@ function displayResult(result, temperature, toUnit) {
         background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
         background.style.backgroundColor = "#e28409";
-    } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 100) {
+    } else if (toUnit === "Fahrenheit" && parseFloat(result) >= 212) {
         background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Celsius" && parseFloat(result) >= 29.4) {
         background.style.backgroundColor = "#85120a";
