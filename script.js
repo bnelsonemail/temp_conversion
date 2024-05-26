@@ -48,6 +48,8 @@ class TemperatureConverter {
       this.kelvin = 0;
   }
 
+
+
   convert(temperature, fromUnit, toUnit) {
       // Test to see if the function is being called
       console.log('I\'m here');
@@ -98,18 +100,41 @@ function displayResult(result, temperature, toUnit) {
   resultElement.textContent = result;
   console.log(result, temperature, toUnit);
 
+  /* 85F = 29.4C = 302.6K bg color red
+  0C = 32F = 273.15K bg color blue
+  0F = -17.8C = 255.4K bg color purple
+  100C = 212F = 373.15K bg color orange
+  */
+
   // Clear any previous color
   resultElement.style.backgroundColor = "gray";
 
   if (toUnit === "Fahrenheit" && temperature > 85) {
       resultElement.style.backgroundColor = "red";
-  } else if (toUnit === "Celsius" && temperature < 0) {
+  } else if (toUnit === "Celsius" && temperature < 1) {
       resultElement.style.backgroundColor = "blue";
   } else if (toUnit === "Fahrenheit" && temperature < 0) {
       resultElement.style.backgroundColor = "purple";
   } else if (toUnit === "Celsius" && temperature > 100) {
       resultElement.style.backgroundColor = "orange";
+  } else if (toUnit === "Fahrenheit" && temperature > 100) {
+      resultElement.style.backgroundColor = "orange";
+  } else if (toUnit === "Kelvin" && temperature > 373.15) {
+      resultElement.style.backgroundColor = "orange";
+  } else if (toUnit === "Kelvin" && temperature < 255.4) {
+      resultElement.style.backgroundColor = "purple";
+  } else if (toUnit === "Kelvin" && temperature < 0) {
+      resultElement.style.backgroundColor = "blue";
+  } else if (toUnit === "Celsius" && temperature < -17.8) {
+      resultElement.style.backgroundColor = "purple";
+  } else if (toUnit === "Celsius" && temperature > 29.4) {
+      resultElement.style.backgroundColor = "red";
+  } else if (toUnit === "Kelvin" && temperature > 302.6) {
+      resultElement.style.backgroundColor = "red";
+  } else if (toUnit === "Fahrenheit" && temperature < 32) {
+      resultElement.style.backgroundColor = "blue";
   }
+  
 }
 
 // Step 5: Add event listener to the button to perform the conversion.
