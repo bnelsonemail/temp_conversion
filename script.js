@@ -123,19 +123,19 @@ function displayResult(result, temperature, toUnit) {
   background.style.backgroundColor = "gray";
 
   
-  if (toUnit === "Fahrenheit" && parseFloat(result) <= 0) {
+  if (toUnit === "Fahrenheit" && parseFloat(result) < 0) {
     background.style.backgroundColor = "purple";
-    } else if (toUnit === "Kelvin" && parseFloat(result) <= 255.4) {
+    } else if (toUnit === "Kelvin" && parseFloat(result) < 255.4) {
         background.style.backgroundColor = "purple";
-    } else if (toUnit === "Celsius" && parseFloat(result) <= -17.8) {
+    } else if (toUnit === "Celsius" && parseFloat(result) < -17.8) {
         background.style.backgroundColor = "purple";
     } else if (toUnit === "Celsius" && parseFloat(result) <= 0) {
         background.style.backgroundColor = "blue";
-    } else if (toUnit === "Kelvin" && parseFloat(result) <= 0) {
+    } else if (toUnit === "Kelvin" && parseFloat(result) <= 273.2) {
         background.style.backgroundColor = "blue";
     } else if (toUnit === "Fahrenheit" && parseFloat(result) <= 32) {
         background.style.backgroundColor = "blue";
-    } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.15) {
+    } else if (toUnit === "Kelvin" && parseFloat(result) >= 373.2) {
         background.style.backgroundColor = "#e28409";
     } else if (toUnit === "Celsius" && parseFloat(result) >= 100) {
         background.style.backgroundColor = "#e28409";
